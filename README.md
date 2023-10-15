@@ -1,3 +1,7 @@
+# wytten 10/15/2023
+Using this project to experiment with gradle pom.xml generation, to learn what the process lacks
+
+
 # 10 Min demo for Springboot 
 
 ## Objective show in 10 min a springboot web reactive project
