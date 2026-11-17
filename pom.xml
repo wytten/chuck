@@ -18,10 +18,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <exec.mainClass>com.davidparry.chuck.ChuckApplication</exec.mainClass>
-        <!-- Override parent's Spring 4.x pin to match spring-boot-dependencies 3.0.2 -->
-        <org.springframework.version>6.0.4</org.springframework.version>
-        <!-- Spring 6.0.x ASM cannot read Java 25 class files -->
-        <jdk.version>17</jdk.version>
     </properties>
   <dependencies>
     <dependency>
@@ -51,50 +47,35 @@
   </dependencies>
   <dependencyManagement>
     <dependencies>
-      <!-- Override parent's JUnit pins to match spring-boot-dependencies 3.0.2 -->
+      <!-- Override parent's JUnit 5 pins to match spring-boot-dependencies -->
       <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.9.2</version>
+        <version>6.0.3</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter</artifactId>
-        <version>5.9.2</version>
+        <version>6.0.3</version>
       </dependency>
       <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-api</artifactId>
-        <version>5.9.2</version>
+        <version>6.0.3</version>
       </dependency>
       <dependency>
         <groupId>org.junit.platform</groupId>
         <artifactId>junit-platform-launcher</artifactId>
-        <version>1.9.2</version>
+        <version>6.0.3</version>
       </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-dependencies</artifactId>
-        <version>3.0.2</version>
+        <version>${spring.boot.version}</version>
         <scope>import</scope>
         <type>pom</type>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-core</artifactId>
-        <version>10.1.61</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-el</artifactId>
-        <version>10.1.61</version>
-      </dependency>
-      <dependency>
-        <groupId>org.apache.tomcat.embed</groupId>
-        <artifactId>tomcat-embed-websocket</artifactId>
-        <version>10.1.61</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
