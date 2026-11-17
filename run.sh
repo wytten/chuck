@@ -1,1 +1,1 @@
-gradle bootRun
+mvn -q compile exec:java

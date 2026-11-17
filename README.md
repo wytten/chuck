@@ -15,9 +15,8 @@ Using this project to experiment with gradle pom.xml generation, to learn what t
 - tar -xzvf chuck.zip
 - rm chuck.zip
 - jenv local graalvm64-17.0.6
--  ./gradlew bootRun
-- ./gradlew nativeCompile !! you must have a [graalvm](https://www.graalvm.org/downloads/) jdk installed and setup for this bonus step)
-- ./build/native/nativeCompile/chuck (see the above need graalvm )
+- ./run.sh (Gradle build has since been removed; this runs it with Maven)
+- ./go.sh [actor] to open a quote in the browser
 
 
 
