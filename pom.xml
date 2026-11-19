@@ -79,4 +79,28 @@
       </dependency>
     </dependencies>
   </dependencyManagement>
+  <build>
+    <plugins>
+      <!-- Sets ${org.mockito:mockito-core:jar} to the resolved jar path -->
+      <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>properties</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <!-- Load Mockito as an agent instead of letting it self-attach (blocked in future JDKs);
+               allow Netty's native library loading (restricted method under JDK 24+);
+               disable CDS, which Mockito defeats by appending to the bootstrap classpath -->
+          <argLine>-javaagent:${org.mockito:mockito-core:jar} --enable-native-access=ALL-UNNAMED -Xshare:off</argLine>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
